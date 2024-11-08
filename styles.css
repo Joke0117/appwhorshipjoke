@@ -38,11 +38,13 @@ body {
     gap: 15px;
 }
 
-.navbar-menu a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.2em;
-    transition: color 0.3s ease;
+.navbar-menu {
+    list-style: none;
+    display: flex;
+    justify-content: center; /* Centra los enlaces en el navbar */
+    gap: 10px;
+    margin-top: 10px; /* Añade espacio entre el título y el menú */
+    padding: 0; /* Asegura que no haya padding extra */
 }
 
 .navbar-menu a:hover {
@@ -150,3 +152,24 @@ html {
     color: #FFFFFF;
 }
 
+/* Ajuste del navbar en dispositivos móviles */
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        padding: 10px; /* Ajuste del padding en móviles */
+    }
+
+    .navbar-brand {
+        margin-bottom: 5px; /* Espacio entre el título y los enlaces */
+    }
+
+    .navbar-menu {
+        justify-content: center; /* Centra los enlaces en el navbar */
+        gap: 10px;
+        height: 30px;
+    }
+
+    .navbar-menu a {
+        font-size: 1em; /* Ajuste del tamaño de fuente en móviles */
+    }
+}
