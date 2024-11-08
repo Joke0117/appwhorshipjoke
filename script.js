@@ -1,17 +1,17 @@
 // Objeto para almacenar y precargar los sonidos de cada nota
 const sounds = {
     "G": new Howl({ src: ['sounds/G.mp3'], loop: true, preload: true, html5: true }),
-    "G#": new Howl({ src: ['sounds/G%23.mp3'], loop: true, preload: true, html5: true }),
+    "G#": new Howl({ src: ['sounds/G_3.mp3'], loop: true, preload: true, html5: true }),
     "A": new Howl({ src: ['sounds/A.mp3'], loop: true, preload: true, html5: true }),
-    "A#": new Howl({ src: ['sounds/A%23.mp3'], loop: true, preload: true, html5: true }),
+    "A#": new Howl({ src: ['sounds/A_3.mp3'], loop: true, preload: true, html5: true }),
     "B": new Howl({ src: ['sounds/B.mp3'], loop: true, preload: true, html5: true }),
     "C": new Howl({ src: ['sounds/C.mp3'], loop: true, preload: true, html5: true }),
-    "C#": new Howl({ src: ['sounds/C%23.mp3'], loop: true, preload: true, html5: true }),
+    "C#": new Howl({ src: ['sounds/C_3.mp3'], loop: true, preload: true, html5: true }),
     "D": new Howl({ src: ['sounds/D.mp3'], loop: true, preload: true, html5: true }),
-    "D#": new Howl({ src: ['sounds/D%23.mp3'], loop: true, preload: true, html5: true }),
+    "D#": new Howl({ src: ['sounds/D_3.mp3'], loop: true, preload: true, html5: true }),
     "E": new Howl({ src: ['sounds/E.mp3'], loop: true, preload: true, html5: true }),
     "F": new Howl({ src: ['sounds/F.mp3'], loop: true, preload: true, html5: true }),
-    "F#": new Howl({ src: ['sounds/F%23.mp3'], loop: true, preload: true, html5: true })
+    "F#": new Howl({ src: ['sounds/F_3.mp3'], loop: true, preload: true, html5: true })
 };
 
 
