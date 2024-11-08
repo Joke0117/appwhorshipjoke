@@ -1,0 +1,152 @@
+/* styles.css */
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #121212, #2e2e2e);
+    color: #FFFFFF;
+    padding: 0 40px;
+}
+
+.navbar {
+    background-color: #333;
+    color: white;
+    padding: 10px 51px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: calc(100% - 20px);
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+}
+
+.navbar-brand {
+    font-size: 1.2em;
+}
+
+.navbar-menu {
+    list-style: none;
+    display: flex;
+    padding: 10px;
+    margin: 77px;
+    gap: 15px;
+}
+
+.navbar-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+}
+
+.navbar-menu a:hover {
+    color: #00eeff;
+}
+
+.pad-container {
+    margin-top: 180px;
+    text-align: center;
+    padding: 0 10px;
+}
+
+.pad-buttons {
+    display: grid;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+@media (min-width: 768px) {
+    .pad-buttons {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(4, auto);
+    }
+}
+
+@media (max-width: 767px) {
+    .pad-buttons {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(3, auto);
+    }
+}
+
+.pad-buttons button {
+    padding: 15px 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #FFFFFF;
+    background: linear-gradient(135deg, #1e1e1e, #333333);
+    border: 2px solid #00BFFF;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.pad-buttons button:hover {
+    background-color: #444;
+    transform: translateY(-2px);
+}
+
+.pad-buttons button:active {
+    transform: translateY(1px);
+}
+
+.about-section {
+    text-align: center;
+    padding: 40px;
+    background: linear-gradient(135deg, #2e2e2e, #121212);
+    border: 2px solid #FFFFFF;
+    margin-top: 20px;
+}
+
+/* Asumiendo que el navbar tiene una altura de 60px */
+.button-section {
+    padding-top: 130px; /* Ajusta este valor según la altura de tu navbar */
+}
+
+html {
+    scroll-padding-top: 130px; /* Ajusta según la altura de tu navbar */
+}
+
+
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    width: 100%; /* Asegura que cubra todo el ancho */
+    position: relative;
+    bottom: 0;
+    left: 0; /* Asegura que comience desde la esquina izquierda */
+    margin: 0;
+    box-sizing: border-box; /* Esto es importante para que el borde no haga que el footer se desplace */
+}
+
+.footer-spacing {
+    margin-bottom: 40px; /* Separador */
+}
+
+/* Asegurarse de que el contenedor de las redes sociales se vea bien */
+.footer .social-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.footer .social-links a {
+    color: #00eeff;
+    text-decoration: none;
+    font-size: 32px; /* Aumentamos el tamaño de los iconos */
+}
+
+.footer .social-links a:hover {
+    color: #FFFFFF;
+}
+
