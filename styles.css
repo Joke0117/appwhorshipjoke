@@ -25,7 +25,9 @@ body {
 .pad-container {
     margin-top: 80px;
     text-align: center;
-    padding: 20px;
+    padding: 100px;
+    margin: 0; /* Asegúrate de que no haya margen */
+    padding-bottom: 20px;
 }
 
 .pad-buttons {
@@ -33,9 +35,10 @@ body {
     gap: 10px;
     justify-content: center;
     margin-bottom: 40px;
+    font-size: 16px;
 
-    /* Diseño para escritorio (2 filas x 6 columnas) */
-    grid-template-columns: repeat(6, minmax(80px, 1fr));
+    /* Ajuste del tamaño mínimo */
+    grid-template-columns: repeat(6, minmax(120px, 1fr)); /* Ajusta 120px según necesites */
     grid-template-rows: repeat(2, auto);
 }
 
