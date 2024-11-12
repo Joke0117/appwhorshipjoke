@@ -4,57 +4,28 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
+    font-family: -apple-system, 'San Francisco', 'Segoe UI', Tahoma, Geneva, sans-serif; /* Fuente de iPhone */
     background: linear-gradient(135deg, #121212, #2e2e2e);
     color: #FFFFFF;
-    padding: 0 40px;
 }
 
 .navbar {
     background-color: #333;
     color: white;
-    padding: 10px 51px;
+    padding: 10px;
+    text-align: center;
     position: fixed;
     top: 0;
-    left: 0;
-    width: calc(100% - 20px);
+    width: 100%;
     z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 60px;
-}
-
-.navbar-brand {
-    font-size: 1.2em;
-}
-
-.navbar-menu {
-    list-style: none;
-    display: flex;
-    padding: 10px;
-    margin: 77px;
-    gap: 15px;
-}
-
-.navbar-menu {
-    list-style: none;
-    display: flex;
-    justify-content: center; /* Centra los enlaces en el navbar */
-    gap: 10px;
-    margin-top: 10px; /* Añade espacio entre el título y el menú */
-    padding: 0; /* Asegura que no haya padding extra */
-}
-
-.navbar-menu a:hover {
-    color: #00eeff;
+    font-size: 24px; /* Tamaño de fuente más grande */
+    font-weight: bold;
 }
 
 .pad-container {
-    margin-top: 180px;
+    margin-top: 80px;
     text-align: center;
-    padding: 0 10px;
+    padding: 20px;
 }
 
 .pad-buttons {
@@ -62,20 +33,16 @@ body {
     gap: 10px;
     justify-content: center;
     margin-bottom: 40px;
+
+    /* Diseño para escritorio (2 filas x 6 columnas) */
+    grid-template-columns: repeat(6, minmax(80px, 1fr));
+    grid-template-rows: repeat(2, auto);
 }
 
-@media (min-width: 768px) {
-    .pad-buttons {
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(4, auto);
-    }
-}
-
-@media (max-width: 767px) {
-    .pad-buttons {
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: repeat(3, auto);
-    }
+.pad-buttons button.active {
+    background-color: #00BFFF; /* Fondo azul para indicar que está presionado */
+    transform: translateY(2px); /* Efecto de presionado */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
 }
 
 .pad-buttons button {
@@ -96,80 +63,260 @@ body {
     transform: translateY(-2px);
 }
 
-.pad-buttons button:active {
-    transform: translateY(1px);
-}
-
-.about-section {
-    text-align: center;
-    padding: 40px;
-    background: linear-gradient(135deg, #2e2e2e, #121212);
-    border: 2px solid #FFFFFF;
-    margin-top: 20px;
-}
-
-/* Asumiendo que el navbar tiene una altura de 60px */
-.button-section {
-    padding-top: 130px; /* Ajusta este valor según la altura de tu navbar */
-}
-
-html {
-    scroll-padding-top: 130px; /* Ajusta según la altura de tu navbar */
-}
-
-
-.footer {
+.tab-content {
+    display: none;
     text-align: center;
     padding: 20px;
+}
+
+/* Mostrar el tab activo */
+.tab-content.active {
+    display: block;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 10px 0; /* Ajustado para que no esté tan grueso */
     background-color: #333;
-    width: 100%; /* Asegura que cubra todo el ancho */
-    position: relative;
+    width: 100%;
+    position: fixed;
     bottom: 0;
-    left: 0; /* Asegura que comience desde la esquina izquierda */
-    margin: 0;
-    box-sizing: border-box; /* Esto es importante para que el borde no haga que el footer se desplace */
+    left: 0;
 }
 
-.footer-spacing {
-    margin-bottom: 40px; /* Separador */
+.footer .tabs {
+    display: flex;
+    justify-content: center; /* Asegura que los botones estén centrados */
+    align-items: center;
+    gap: 20px; /* Espacio entre los botones */
+    padding: 10px 0;
 }
 
-/* Asegurarse de que el contenedor de las redes sociales se vea bien */
+.footer .tabs button {
+    background-color: #333; /* Fondo igual al del footer */
+    color: #FFFFFF; /* Texto blanco */
+    border: 2px solid transparent; /* Borde transparente para que no cambie */
+    padding: 15px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column; /* Icono arriba y texto abajo */
+    align-items: center;
+    gap: 8px; /* Espacio entre el icono y el texto */
+    border-radius: 5px; /* Esquinas redondeadas */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transición para color y fondo */
+    width: auto; /* Asegura que el ancho se ajuste al contenido */
+}
+
+.footer .tabs button i {
+    font-size: 20px; /* Tamaño del icono */
+}
+
+.footer .tabs button span {
+    font-size: 14px; /* Tamaño del texto debajo del icono */
+}
+
+/* Cambia color de letra cuando la pestaña es activada */
+.footer .tabs button.active {
+    background-color: #00BFFF; /* Fondo azul para la pestaña activa */
+    color: #121212; /* Cambia el color del texto */
+    border: 2px solid #00BFFF; /* Agrega borde azul para indicar que está activo */
+}
+
+/* Hover effect */
+.footer .tabs button:hover {
+    background-color: #444; /* Fondo gris al pasar el mouse */
+}
+
 .footer .social-links {
     list-style: none;
     display: flex;
     justify-content: center;
     gap: 15px;
+    padding: 0;
 }
 
 .footer .social-links a {
     color: #00eeff;
-    text-decoration: none;
-    font-size: 32px; /* Aumentamos el tamaño de los iconos */
+    font-size: 24px;
 }
 
 .footer .social-links a:hover {
     color: #FFFFFF;
 }
 
-/* Ajuste del navbar en dispositivos móviles */
-@media (max-width: 600px) {
-    .navbar {
-        flex-direction: column;
-        padding: 10px; /* Ajuste del padding en móviles */
+/* Media queries para tablets */
+@media (max-width: 768px) {
+    .pad-buttons {
+        /* Diseño para móviles: 6 filas x 2 columnas */
+        grid-template-columns: repeat(2, minmax(50px, 1fr));
+        grid-template-rows: repeat(6, auto);
     }
 
-    .navbar-brand {
-        margin-bottom: 5px; /* Espacio entre el título y los enlaces */
+    .pad-buttons button {
+        font-size: 20px;
+        padding: 10px 15px;
     }
 
-    .navbar-menu {
-        justify-content: center; /* Centra los enlaces en el navbar */
-        gap: 10px;
-        height: 30px;
-    }
-
-    .navbar-menu a {
-        font-size: 1em; /* Ajuste del tamaño de fuente en móviles */
+    .footer .tabs button {
+        font-size: 14px;
+        padding: 8px 12px;
     }
 }
+
+/* Media queries para móviles */
+@media (max-width: 480px) {
+    .navbar {
+        font-size: 18px;
+        padding: 8px;
+    }
+
+    .pad-container {
+        margin-top: 60px;
+        padding: 15px;
+    }
+
+    .pad-buttons {
+        /* Asegura que se respeten 6 filas x 2 columnas */
+        grid-template-columns: repeat(2, minmax(40px, 1fr));
+        grid-template-rows: repeat(6, auto);
+    }
+
+    .pad-buttons button {
+        font-size: 18px;
+        padding: 8px 12px;
+    }
+
+    .footer .tabs {
+        flex-direction: row; /* En dispositivos móviles, mantiene los botones en una sola fila */
+        gap: 10px;
+    }
+
+    .footer .tabs button {
+        font-size: 14px;
+        padding: 10px;
+        width: 100%;
+    }
+
+    .footer .tabs button i {
+        font-size: 18px; /* Ajustar tamaño del icono para móviles */
+    }
+
+    .footer .social-links {
+        flex-direction: column;
+    }
+
+    .footer .social-links a {
+        font-size: 20px;
+    }
+}
+
+/* Estilos específicos para el cuadro del desarrollador */
+#developer {
+    padding: 20px;
+    background-color: #333;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 20px auto;
+    text-align: center;
+    overflow-y: auto;
+    height: 300px;
+}
+
+#developer h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: #00BFFF;
+}
+
+#developer p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+#developer .social-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 0;
+    margin: 0;
+}
+
+#developer .social-links a {
+    font-size: 32px;
+    color: #00eeff;
+}
+
+#developer .social-links a:hover {
+    color: #FFFFFF;
+}
+
+.developer-logo {
+    width: 150px; /* Tamaño inicial para pantallas grandes */
+    height: auto;
+    margin-top: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Media queries para tablets */
+@media (max-width: 768px) {
+    #developer {
+        max-width: 500px;
+        padding: 15px;
+        margin: 20px; /* Añadido margen lateral */
+    }
+
+    #developer h2 {
+        font-size: 24px;
+    }
+
+    #developer p {
+        font-size: 16px;
+    }
+
+    #developer .social-links {
+        gap: 20px;
+    }
+
+    #developer .social-links a {
+        font-size: 28px;
+    }
+    .developer-logo {
+        width: 130px; /* Ajuste para tabletas */
+        margin-top: 18px; /* Ajuste de espacio superior */
+    }
+}
+
+/* Media queries para móviles */
+@media (max-width: 480px) {
+    #developer {
+        max-width: 400px;
+        padding: 10px;
+        margin: 20px; /* Añadido margen lateral */
+    }
+
+    #developer h2 {
+        font-size: 20px;
+    }
+
+    #developer p {
+        font-size: 14px;
+    }
+
+    #developer .social-links {
+        gap: 15px;
+    }
+
+    #developer .social-links a {
+        font-size: 24px;
+    }
+    .developer-logo {
+        width: 120px; /* Reduzca el tamaño del logo en dispositivos móviles */
+        margin-top: 15px; /* Ajuste de espacio superior */
+    }
+}
+

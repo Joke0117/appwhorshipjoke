@@ -5,22 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pad Worship - Piano</title>
     <link rel="stylesheet" href="styles.css">
-    <!-- Incluye Font Awesome para los iconos de redes sociales -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
+    <!-- Navbar con solo el título -->
     <nav class="navbar">
-        <div class="navbar-brand">Pad Worship - Piano</div>
-        <ul class="navbar-menu">
-            <li><a href="#home">Inicio</a></li>
-            <li><a href="#about">Acerca de</a></li>
-            <li><a href="#contact">Contacto</a></li>
-        </ul>
+        <div class="navbar-title" id="navbar-title">Pad Worship - Piano</div>
     </nav>
 
+    <!-- Contenedor de notas musicales -->
     <section id="home" class="pad-container">
         <div class="pad-buttons">
-            <!-- Botones de notas musicales -->
             <button onclick="playSound('G')">G</button>
             <button onclick="playSound('G#')">G#</button>
             <button onclick="playSound('A')">A</button>
@@ -36,25 +31,68 @@
         </div>
     </section>
 
+    <!-- Sección de tabs en el pie de página -->
+    <footer class="footer">
+        <div class="tabs">
+            <button onclick="showTab('mayores')">
+                <i class="fas fa-music"></i> Mayores
+            </button>
+            <button onclick="showTab('menores')">
+                <i class="fas fa-headphones"></i> Menores
+            </button>
+            <button onclick="showTab('developer')">
+                <i class="fas fa-guitar"></i> Desarrollador
+            </button>
+        </div>
+    </footer>   
 
-    <section id="about" class="about-section">
-        <h2>Acerca del Desarrollador</h2>
-        <p>Hola, ¡Bienvenidos! A mi App de Pad Whorship.</p>
-        <p>Me llamo José, esarrollador apasionado por la música y la tecnología. Explora mis proyectos en las redes sociales.</p>
+    <!-- Contenidos de cada tab -->
+    <section id="mayores" class="tab-content" style="display: block;">
+        <div class="pad-buttons">
+            <!-- Notas mayores, incluidas las sostenidas -->
+            <button onclick="playSound('C')">C</button>
+            <button onclick="playSound('C#')">C#</button>
+            <button onclick="playSound('D')">D</button>
+            <button onclick="playSound('D#')">D#</button>
+            <button onclick="playSound('E')">E</button>
+            <button onclick="playSound('F')">F</button>
+            <button onclick="playSound('F#')">F#</button>
+            <button onclick="playSound('G')">G</button>
+            <button onclick="playSound('G#')">G#</button>
+            <button onclick="playSound('A')">A</button>
+            <button onclick="playSound('A#')">A#</button>
+            <button onclick="playSound('B')">B</button>
+        </div>
+    </section>
+    
+    <section id="menores" class="tab-content">
+        <div class="pad-buttons">
+            <!-- Notas menores, incluidas las sostenidas -->
+            <button onclick="playSound('Cm')">Cm</button>
+            <button onclick="playSound('C#m')">C#m</button>
+            <button onclick="playSound('Dm')">Dm</button>
+            <button onclick="playSound('D#m')">D#m</button>
+            <button onclick="playSound('Em')">Em</button>
+            <button onclick="playSound('Fm')">Fm</button>
+            <button onclick="playSound('F#m')">F#m</button>
+            <button onclick="playSound('Gm')">Gm</button>
+            <button onclick="playSound('G#m')">G#m</button>
+            <button onclick="playSound('Am')">Am</button>
+            <button onclick="playSound('A#m')">A#m</button>
+            <button onclick="playSound('Bm')">Bm</button>
+        </div>
     </section>
 
-    </div>
-
-    <div class="footer-spacing"></div>
-
-    <footer id="contact" class="footer">
-        <p>Desarrollado Por: José Ángel Martínez Rodelo</p>
-        <p>Sígueme en mis redes sociales:</p>
+    <section id="developer" class="tab-content">
+        <h2>Acerca del Desarrollador</h2>
+        <p>Hola, ¡Bienvenidos! A mi App de Pad Worship.</p>
+        <p>Me llamo José, desarrollador apasionado por la música y la tecnología. Sígueme en redes sociales.</p>
         <ul class="social-links">
             <li><a href="https://www.facebook.com/joseangel.martinezrodelo/?locale=es_LA" target="_blank"><i class="fab fa-facebook"></i></a></li>
             <li><a href="https://www.instagram.com/jose17_martinez_/" target="_blank"><i class="fab fa-instagram"></i></a></li>
         </ul>
-    </footer>
+        <img src="image/joke logo.png" alt="Logo Joke" class="developer-logo">
+    </section>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
     <script src="script.js"></script>
