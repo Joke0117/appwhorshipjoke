@@ -1,12 +1,14 @@
+/* Estilos generales */
 body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: -apple-system, 'San Francisco', 'Segoe UI', Tahoma, Geneva, sans-serif; /* Fuente de iPhone */
+    font-family: -apple-system, 'San Francisco', 'Segoe UI', Tahoma, Geneva, sans-serif;
     background: linear-gradient(135deg, #121212, #2e2e2e);
     color: #FFFFFF;
 }
 
+/* Barra de navegación */
 .navbar {
     background-color: #333;
     color: white;
@@ -16,44 +18,32 @@ body {
     top: 0;
     width: 100%;
     z-index: 1000;
-    font-size: 24px; /* Tamaño de fuente más grande */
+    font-size: 24px;
     font-weight: bold;
 }
 
-.pad-container {
-    margin: 0 auto;
-    padding: 20px;
-    max-width: 800px; /* Limita el ancho para que no se expanda demasiado */
-    margin-top: 80px;
-}
-
+/* Botones del pad */
 .pad-buttons {
     display: grid;
     gap: 10px;
     justify-content: center;
     margin-bottom: 40px;
     font-size: 16px;
-    grid-template-columns: repeat(5, 1fr); /* Para escritorio */
-    grid-template-rows: repeat(2, auto);
-}
-
-.pad-buttons button.active {
-    background-color: hsl(195, 100%, 50%); /* Fondo azul para indicar que está presionado */
-    transform: translateY(2px); /* Efecto de presionado */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
+    grid-template-columns: repeat(6, 1fr); /* Cambiado a 6 columnas */
+    grid-template-rows: repeat(2, auto);   /* 2 filas */
 }
 
 .pad-buttons button {
-    padding: 20px;
+    padding: 70px;
     font-size: 24px;
     font-weight: bold;
-    color: rgb(255, 255, 255); /* Texto en negro */
-    background-color: rgb(45, 45, 45); /* Fondo blanco */
-    border: 1px solid rgb(0, 191, 255);; /* Borde negro delgado */
-    border-radius: 5px; /* Borde menos redondeado */
+    color: #FFFFFF;
+    background-color: rgb(45, 45, 45);
+    border: 1px solid rgb(0, 191, 255);
+    border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    height: auto; /* Ajuste de altura automática */
+    height: auto;
 }
 
 .pad-buttons button:hover {
@@ -61,13 +51,19 @@ body {
     transform: translateY(-2px);
 }
 
+.pad-buttons button.active {
+    background-color: hsl(195, 100%, 50%);
+    transform: translateY(2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Contenido de las pestañas */
 .tab-content {
     display: none;
     text-align: center;
     padding: 20px;
 }
 
-/* Mostrar el tab activo */
 .tab-content.active {
     display: block;
 }
@@ -75,7 +71,7 @@ body {
 /* Footer */
 .footer {
     text-align: center;
-    padding: 20px 0; /* Ajustado para que no esté tan grueso */
+    padding: 20px 0;
     background-color: #333;
     width: 100%;
     position: fixed;
@@ -85,48 +81,46 @@ body {
 
 .footer .tabs {
     display: flex;
-    justify-content: center; /* Asegura que los botones estén centrados */
+    justify-content: center;
     align-items: center;
-    gap: 20px; /* Espacio entre los botones */
+    gap: 20px;
     padding: 10px 20px;
     height: 10px;
 }
 
 .footer .tabs button {
-    background-color: #333; /* Fondo igual al del footer */
-    color: #FFFFFF; /* Texto blanco */
-    border: 2px solid transparent; /* Borde transparente para que no cambie */
+    background-color: #333;
+    color: #FFFFFF;
+    border: 2px solid transparent;
     padding: 5px 10px;
     font-size: 12px;
     cursor: pointer;
     display: flex;
-    flex-direction: column; /* Icono arriba y texto abajo */
+    flex-direction: column;
     align-items: center;
-    gap: 4px; /* Espacio entre el icono y el texto */
-    border-radius: 5px; /* Esquinas redondeadas */
-    transition: background-color 0.3s ease, color 0.3s ease; /* Transición para color y fondo */
-    width: auto; /* Asegura que el ancho se ajuste al contenido */
+    gap: 4px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    width: auto;
     margin: 0;
 }
 
 .footer .tabs button i {
-    font-size: 16px; /* Tamaño del icono */
+    font-size: 16px;
 }
 
 .footer .tabs button span {
-    font-size: 14px; /* Tamaño del texto debajo del icono */
+    font-size: 14px;
 }
 
-/* Cambia color de letra cuando la pestaña es activada */
 .footer .tabs button.active {
-    background-color: #00BFFF; /* Fondo azul para la pestaña activa */
-    color: #121212; /* Cambia el color del texto */
-    border: 2px solid #00BFFF; /* Agrega borde azul para indicar que está activo */
+    background-color: #00BFFF;
+    color: #121212;
+    border: 2px solid #00BFFF;
 }
 
-/* Hover effect */
 .footer .tabs button:hover {
-    background-color: #444; /* Fondo gris al pasar el mouse */
+    background-color: #444;
 }
 
 .footer .social-links {
@@ -146,11 +140,26 @@ body {
     color: #FFFFFF;
 }
 
-/* Media queries para tablets */
+/* Contenedor de la versión */
+.version-container {
+    margin-top: -30px;  /* Aumentamos el margen superior */
+    margin-bottom: 50px; /* Separación con el footer */
+}
+
+/* Estilo de la versión */
+.version-text {
+    margin-left: 24px; /* Alineado a la izquierda */
+    font-size: 20px;
+    color: #aaa;
+    padding: 0; /* Eliminamos el padding negativo */
+}
+
+
+/* Estilos para tablets */
 @media (max-width: 768px) {
     .pad-buttons {
-        grid-template-columns: repeat(2, 1fr); /* Dos columnas en móvil */
-        grid-template-rows: repeat(6, auto); /* Seis filas en móvil */
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(6, auto);
     }
 
     .pad-buttons button {
@@ -164,7 +173,7 @@ body {
     }
 }
 
-/* Media queries para móviles */
+/* Estilos para móviles */
 @media (max-width: 480px) {
     .navbar {
         font-size: 18px;
@@ -177,7 +186,6 @@ body {
     }
 
     .pad-buttons {
-        /* Asegura que se respeten 6 filas x 2 columnas */
         grid-template-columns: repeat(2, minmax(40px, 1fr));
         grid-template-rows: repeat(6, auto);
     }
@@ -188,7 +196,7 @@ body {
     }
 
     .footer .tabs {
-        flex-direction: row; /* En dispositivos móviles, mantiene los botones en una sola fila */
+        flex-direction: row;
         gap: 10px;
     }
 
@@ -199,7 +207,7 @@ body {
     }
 
     .footer .tabs button i {
-        font-size: 18px; /* Ajustar tamaño del icono para móviles */
+        font-size: 18px;
     }
 
     .footer .social-links {
@@ -211,7 +219,7 @@ body {
     }
 }
 
-/* Estilos específicos para el cuadro del desarrollador */
+/* Cuadro del desarrollador */
 #developer {
     padding: 20px;
     background-color: #333;
@@ -253,7 +261,7 @@ body {
 }
 
 .developer-logo {
-    width: 150px; /* Tamaño inicial para pantallas grandes */
+    width: 150px;
     height: auto;
     margin-top: 20px;
     display: block;
@@ -261,12 +269,13 @@ body {
     margin-right: auto;
 }
 
-/* Media queries para tablets */
+
+/* Estilos específicos para tablets */
 @media (max-width: 768px) {
     #developer {
         max-width: 500px;
         padding: 15px;
-        margin: 20px; /* Añadido margen lateral */
+        margin: 20px;
     }
 
     #developer h2 {
@@ -285,17 +294,17 @@ body {
         font-size: 28px;
     }
     .developer-logo {
-        width: 130px; /* Ajuste para tabletas */
-        margin-top: 18px; /* Ajuste de espacio superior */
+        width: 130px;
+        margin-top: 18px;
     }
 }
 
-/* Media queries para móviles */
+/* Estilos específicos para móviles */
 @media (max-width: 480px) {
     #developer {
         max-width: 400px;
         padding: 10px;
-        margin: 20px; /* Añadido margen lateral */
+        margin: 20px;
     }
 
     #developer h2 {
@@ -314,8 +323,7 @@ body {
         font-size: 24px;
     }
     .developer-logo {
-        width: 120px; /* Reduzca el tamaño del logo en dispositivos móviles */
-        margin-top: 15px; /* Ajuste de espacio superior */
+        width: 120px;
+        margin-top: 15px;
     }
 }
-
