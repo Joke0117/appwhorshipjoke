@@ -27,10 +27,11 @@ body {
     display: grid;
     gap: 10px;
     justify-content: center;
-    margin-bottom: 40px;
+    margin: 100px auto 40px auto;
     font-size: 16px;
-    grid-template-columns: repeat(6, 1fr); /* Cambiado a 6 columnas */
-    grid-template-rows: repeat(2, auto);   /* 2 filas */
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(2, auto);
+    width: 90%; /* Centra y ajusta el ancho */
 }
 
 .pad-buttons button {
@@ -40,15 +41,15 @@ body {
     color: #FFFFFF;
     background-color: rgb(45, 45, 45);
     border: 1px solid rgb(0, 191, 255);
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    height: auto;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 .pad-buttons button:hover {
     background-color: #277b71;
-    transform: translateY(-2px);
+    transform: translateY(-3px);
 }
 
 .pad-buttons button.active {
@@ -71,12 +72,13 @@ body {
 /* Footer */
 .footer {
     text-align: center;
-    padding: 20px 0;
+    padding: 10px 0;  /* Reducido el padding */
     background-color: #333;
     width: 100%;
     position: fixed;
     bottom: 0;
     left: 0;
+    margin: 0;
 }
 
 .footer .tabs {
@@ -85,32 +87,21 @@ body {
     align-items: center;
     gap: 20px;
     padding: 10px 20px;
-    height: 10px;
 }
 
 .footer .tabs button {
     background-color: #333;
     color: #FFFFFF;
     border: 2px solid transparent;
-    padding: 5px 10px;
-    font-size: 12px;
+    padding: 8px 16px;
+    font-size: 14px;
     cursor: pointer;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 4px;
-    border-radius: 5px;
+    border-radius: 8px;
     transition: background-color 0.3s ease, color 0.3s ease;
-    width: auto;
-    margin: 0;
-}
-
-.footer .tabs button i {
-    font-size: 16px;
-}
-
-.footer .tabs button span {
-    font-size: 14px;
 }
 
 .footer .tabs button.active {
@@ -127,13 +118,14 @@ body {
     list-style: none;
     display: flex;
     justify-content: center;
-    gap: 15px;
+    gap: 20px;
     padding: 0;
 }
 
 .footer .social-links a {
     color: #00eeff;
     font-size: 24px;
+    transition: color 0.3s ease;
 }
 
 .footer .social-links a:hover {
@@ -142,57 +134,53 @@ body {
 
 /* Contenedor de la versión */
 .version-container {
-    margin-top: -30px;  /* Aumentamos el margen superior */
-    margin-bottom: 50px; /* Separación con el footer */
+    margin-top: -30px;
+    margin-bottom: 0px;
 }
 
-/* Estilo de la versión */
 .version-text {
-    margin-left: 24px; /* Alineado a la izquierda */
-    font-size: 20px;
+    font-size: 25px;
     color: #aaa;
-    padding: 0; /* Eliminamos el padding negativo */
+    padding: 88px;
+    margin: 10px 0; /* Añade un poco de espacio arriba y abajo */
+    bottom: 10px; /* Ajusta este valor según sea necesario */
 }
+/* Estilos responsivos */
 
-
-/* Estilos para tablets */
+/* Tablets */
 @media (max-width: 768px) {
     .pad-buttons {
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(6, auto);
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(4, auto);
+        width: 95%;
     }
 
     .pad-buttons button {
+        padding: 50px;
         font-size: 20px;
-        padding: 10px 15px;
     }
 
     .footer .tabs button {
-        font-size: 14px;
-        padding: 8px 12px;
+        font-size: 12px;
+        padding: 6px 12px;
     }
 }
 
-/* Estilos para móviles */
+/* Móviles */
 @media (max-width: 480px) {
     .navbar {
         font-size: 18px;
         padding: 8px;
     }
 
-    .pad-container {
-        margin-top: 60px;
-        padding: 15px;
-    }
-
     .pad-buttons {
-        grid-template-columns: repeat(2, minmax(40px, 1fr));
+        grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(6, auto);
     }
 
     .pad-buttons button {
+        padding: 40px;
         font-size: 18px;
-        padding: 8px 12px;
     }
 
     .footer .tabs {
@@ -201,13 +189,8 @@ body {
     }
 
     .footer .tabs button {
-        font-size: 14px;
-        padding: 10px;
-        width: 100%;
-    }
-
-    .footer .tabs button i {
-        font-size: 18px;
+        font-size: 12px;
+        padding: 8px;
     }
 
     .footer .social-links {
@@ -217,18 +200,23 @@ body {
     .footer .social-links a {
         font-size: 20px;
     }
+    .version-text {
+        text-align: left;
+        margin-left: -60px; /* Ajusta el margen izquierdo según lo necesario */
+    }
 }
 
 /* Cuadro del desarrollador */
 #developer {
-    padding: 20px;
+    padding: 30px;
+    padding-top: 80px; /* Espacio adicional para separar del navbar */
     background-color: #333;
     border-radius: 10px;
     max-width: 600px;
-    margin: 20px auto;
+    margin: 0 auto;
     text-align: center;
     overflow-y: auto;
-    height: 300px;
+    height: auto;
 }
 
 #developer h2 {
@@ -267,63 +255,4 @@ body {
     display: block;
     margin-left: auto;
     margin-right: auto;
-}
-
-
-/* Estilos específicos para tablets */
-@media (max-width: 768px) {
-    #developer {
-        max-width: 500px;
-        padding: 15px;
-        margin: 20px;
-    }
-
-    #developer h2 {
-        font-size: 24px;
-    }
-
-    #developer p {
-        font-size: 16px;
-    }
-
-    #developer .social-links {
-        gap: 20px;
-    }
-
-    #developer .social-links a {
-        font-size: 28px;
-    }
-    .developer-logo {
-        width: 130px;
-        margin-top: 18px;
-    }
-}
-
-/* Estilos específicos para móviles */
-@media (max-width: 480px) {
-    #developer {
-        max-width: 400px;
-        padding: 10px;
-        margin: 20px;
-    }
-
-    #developer h2 {
-        font-size: 20px;
-    }
-
-    #developer p {
-        font-size: 14px;
-    }
-
-    #developer .social-links {
-        gap: 15px;
-    }
-
-    #developer .social-links a {
-        font-size: 24px;
-    }
-    .developer-logo {
-        width: 120px;
-        margin-top: 15px;
-    }
 }
