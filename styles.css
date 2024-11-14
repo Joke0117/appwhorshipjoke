@@ -185,7 +185,7 @@ body {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(6, 1fr); /* Asegura que haya 6 filas */
         width: 100%;
-        margin: 10px auto 50px; /* Reducido el margen superior e inferior */
+        margin: -5px auto 50px; /* Reducido el margen superior e inferior */
         height: calc(100vh - 300px); /* Ocupa el resto de la pantalla menos navbar y footer */
         gap: 10px; /* Reducir el espacio entre los botones */
         padding: 70px 0px;
@@ -194,7 +194,7 @@ body {
     .pad-buttons button {
         padding: 20px; /* Reducido para que quepan más filas */
         font-size: 16px;
-        height: 80px;
+        height: 85px;
         border-radius: 5px;
     }
 
