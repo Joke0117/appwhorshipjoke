@@ -176,7 +176,8 @@ body {
 @media (max-width: 480px) {
     .navbar {
         font-size: 18px;
-        padding: 8px;
+        padding: 15px;
+        justify-content: center;
     }
 
     /* Ajuste del contenedor y botones */
@@ -184,17 +185,17 @@ body {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(6, 1fr); /* Asegura que haya 6 filas */
         width: 100%;
-        margin: 5px auto 30px; /* Reducido el margen superior e inferior */
-        height: calc(100vh - 200px); /* Ocupa el resto de la pantalla menos navbar y footer */
+        margin: -20px auto 50px; /* Reducido el margen superior e inferior */
+        height: calc(100vh - 300px); /* Ocupa el resto de la pantalla menos navbar y footer */
         gap: 10px; /* Reducir el espacio entre los botones */
-        padding: 40px 0px;
+        padding: 70px 0px;
     }
 
     .pad-buttons button {
         padding: 20px; /* Reducido para que quepan más filas */
         font-size: 16px;
-        height: 90px;
-        border-radius: 10px;
+        height: 80px;
+        border-radius: 7px;
     }
 
     .footer .tabs {
@@ -203,7 +204,7 @@ body {
     }
 
     .footer .tabs button {
-        font-size: 12px;
+        font-size: 14px;
         padding: 8px;
     }
 
