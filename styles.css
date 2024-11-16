@@ -283,14 +283,14 @@ body {
         flex-direction: column; /* Coloca las tarjetas en una columna */
         align-items: center; /* Centra horizontalmente */
         justify-content: center; /* Centra verticalmente */
-        padding: 30px 0; /* Ajusta el padding del contenedor */
+        padding: 42px 0; /* Ajusta el padding del contenedor */
     }
 
     .developer-card {
         width: 100%; /* Reduce el tamaño de la tarjeta al 90% del ancho */
-        max-width: 300px; /* Asegura que no sea más grande que un límite */
+        max-width: 350px; /* Asegura que no sea más grande que un límite */
         margin: 1px -20px;
-        min-height: 155px;
+        min-height: 15px;
     }
 
     .developer-card h2 {
@@ -299,7 +299,7 @@ body {
     }
 
     .developer-card p {
-        font-size: 16px; /* Reduce el tamaño del texto */
+        font-size: 18px; /* Reduce el tamaño del texto */
         margin-bottom: 8px;
     }
 
@@ -333,12 +333,12 @@ body {
     }
 
     #developer h2 {
-        font-size: 14px;
+        font-size: 18px;
         margin-bottom: 15px;
     }
 
     #developer p {
-        font-size: 12px;
+        font-size: 15px;
         margin-bottom: 15px;
     }
 
@@ -347,7 +347,7 @@ body {
     }
 
     #developer .social-links a {
-        font-size: 16px;
+        font-size: 15px;
     }
 
     .developer-logo {
