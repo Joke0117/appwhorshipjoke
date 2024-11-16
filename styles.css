@@ -72,7 +72,7 @@ body {
 /* Footer */
 .footer {
     text-align: center;
-    padding: 5px 0;  /* Reducido el padding */
+    padding: 5px 0;
     background-color: #333;
     width: 100%;
     position: fixed;
@@ -133,26 +133,89 @@ body {
 }
 
 .footer-divider {
-    width: 100%; /* Ajusta el ancho de la línea */
-    margin: 10px auto; /* Centra la línea y ajusta el margen */
+    width: 100%;
+    margin: 10px auto;
     border: 0;
-    border-top: 1px solid #555; /* Color de la línea */
-    opacity: 0.6; 
-    
+    border-top: 1px solid #555;
+    opacity: 0.6;
 }
 
 /* Contenedor de la versión */
 .version-container {
     text-align: left;
     padding-left: 10px;
-    margin-bottom: 5px; /* Ajusta el espaciado inferior */
+    margin-bottom: 5px;
 }
 
 .version-text {
     font-size: 20px;
     color: #555;
 }
-/* Estilos responsivos */
+
+/* Cuadro del desarrollador */
+.developer-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.developer-card {
+    background: linear-gradient(135deg, rgb(36, 36, 36) 0%, rgba(67, 67, 67, 0.5) 100%);
+    color: white;
+    border-radius: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    padding: 22px;
+    text-align: center;
+    flex: 1;
+    min-width: 240px;
+    max-width: 350px;
+    margin: 22px 0px;
+}
+
+.developer-card:hover {
+    transform: translateY(-10px); /* Desplaza la tarjeta ligeramente hacia arriba */
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5); /* Aumenta la sombra para un efecto más profundo */
+    background: #333; /* Cambia el fondo cuando el cursor está sobre la tarjeta */
+}
+
+.developer-card h2 {
+    color: #00BFFF;
+    margin-bottom: 15px;
+}
+
+.developer-card p {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.social-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.social-links a {
+    text-decoration: none;
+    color: #00eeff;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #FFFFFF;
+}
+
+.developer-logo {
+    width: 100px;
+    height: auto;
+    margin: 10px auto;
+}
 
 /* Tablets */
 @media (max-width: 768px) {
@@ -171,8 +234,14 @@ body {
         font-size: 12px;
         padding: 6px 12px;
     }
+
+    .developer-container {
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
+/* Móviles */
 @media (max-width: 480px) {
     .navbar {
         font-size: 18px;
@@ -180,19 +249,18 @@ body {
         justify-content: center;
     }
 
-    /* Ajuste del contenedor y botones */
     .pad-buttons {
         grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(6, 1fr); /* Asegura que haya 6 filas */
+        grid-template-rows: repeat(6, 1fr);
         width: 100%;
-        margin: -10px auto 50px; /* Reducido el margen superior e inferior */
-        height: calc(100vh - 300px); /* Ocupa el resto de la pantalla menos navbar y footer */
-        gap: 10px; /* Reducir el espacio entre los botones */
+        margin: -10px auto 50px;
+        height: calc(100vh - 300px);
+        gap: 10px;
         padding: 70px 0px;
     }
 
     .pad-buttons button {
-        padding: 20px; /* Reducido para que quepan más filas */
+        padding: 20px;
         font-size: 16px;
         height: 85px;
         border-radius: 5px;
@@ -207,6 +275,33 @@ body {
         font-size: 14px;
         padding: 8px;
     }
+    .developer-container {
+        display: flex; /* Activa Flexbox */
+        flex-direction: column; /* Coloca las tarjetas en una columna */
+        align-items: center; /* Centra horizontalmente */
+        justify-content: center; /* Centra verticalmente */
+        padding: 52px 0; /* Ajusta el padding del contenedor */
+    }
+
+    .developer-card {
+        width: 200%; /* Reduce el tamaño de la tarjeta al 90% del ancho */
+        max-width: 100px; /* Asegura que no sea más grande que un límite */
+        margin: 1px 0; /* Espaciado entre tarjetas */
+    }
+
+    .developer-card h2 {
+        font-size: 16px; /* Reduce el tamaño del título */
+        margin-bottom: 10px; /* Ajusta el margen inferior */
+    }
+
+    .developer-card p {
+        font-size: 14px; /* Reduce el tamaño del texto */
+        margin-bottom: 8px; /* Ajusta el margen inferior */
+    }
+
+    .social-links a {
+        font-size: 14px; /* Reduce el tamaño de los iconos sociales */
+    }
 
     .footer .social-links {
         flex-direction: column;
@@ -217,8 +312,8 @@ body {
     }
 
     .footer-divider {
-        width: 100%; /* Ajusta el ancho para que se vea bien en pantallas pequeñas */
-        margin: 5px auto; /* Espaciado reducido en móviles */
+        width: 100%;
+        margin: 5px auto;
     }
 
     .version-container {
@@ -230,60 +325,29 @@ body {
     .version-text {
         font-size: 16px;
         color: #aaa;
-        display: block; /* Asegura que siempre se muestre en móviles */
+        display: block;
     }
-    .pad-container {
-        padding-bottom: 100px;
-        padding: 0px;
+
+    #developer h2 {
+        font-size: 14px;
+        margin-bottom: 15px;
     }
-}
 
-/* Cuadro del desarrollador */
-#developer {
-    padding: 60px;
-    padding-top: 70px; /* Espacio adicional para separar del navbar */
-    background: linear-gradient(135deg, #121212, #2e2e2e);
-    border-radius: auto;
-    margin: 20px auto;
-    text-align: center;
-    overflow-y: auto;
-    height: auto;
-}
+    #developer p {
+        font-size: 12px;
+        margin-bottom: 15px;
+    }
 
-#developer h2 {
-    font-size: 28px;
-    margin-bottom: 15px;
-    color: #00BFFF;
-}
+    #developer .social-links {
+        gap: 5px;
+    }
 
-#developer p {
-    font-size: 18px;
-    margin-bottom: 20px;
-}
+    #developer .social-links a {
+        font-size: 12px;
+    }
 
-#developer .social-links {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    padding: 0;
-    margin: 0;
-}
-
-#developer .social-links a {
-    font-size: 32px;
-    color: #00eeff;
-}
-
-#developer .social-links a:hover {
-    color: #FFFFFF;
-}
-
-.developer-logo {
-    width: 150px;
-    height: auto;
-    margin-top: 20px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+    .developer-logo {
+        width: 120px;
+        margin-top: 15px;
+    }
 }
