@@ -13,13 +13,13 @@ body {
     background-color: #333;
     color: white;
     padding: 10px;
-    text-align: center;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
     font-size: 24px;
     font-weight: bold;
+    padding-left: 90px; /* Ajusta la distancia desde la izquierda */
 }
 
 /* Botones del pad */
@@ -157,7 +157,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    gap: 20px;
+    gap: 2px;
     flex-wrap: wrap;
     padding: 20px;
 }
@@ -169,10 +169,13 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     padding: 22px;
     text-align: center;
-    flex: 1;
-    min-width: 240px;
-    max-width: 350px;
-    margin: 22px 0px;
+    min-width: 90px;
+    max-width: 380px;
+    margin: 40px 0px;
+    display: flex; /* Activa Flexbox dentro de la tarjeta */
+    flex-direction: column; /* Coloca los elementos en una columna */
+    justify-content: center; /* Centra verticalmente */
+    align-items: center; /* Centra horizontalmente */
 }
 
 .developer-card:hover {
@@ -202,13 +205,13 @@ body {
 
 .social-links a {
     text-decoration: none;
-    color: #00eeff;
-    font-size: 18px;
+    color: hsl(0, 0%, 100%);
+    font-size: 30px;
     transition: color 0.3s ease;
 }
 
 .social-links a:hover {
-    color: #FFFFFF;
+    color: #00eeff;
 }
 
 .developer-logo {
@@ -246,7 +249,7 @@ body {
     .navbar {
         font-size: 18px;
         padding: 15px;
-        justify-content: center;
+        padding-left: 24px; /
     }
 
     .pad-buttons {
@@ -280,27 +283,28 @@ body {
         flex-direction: column; /* Coloca las tarjetas en una columna */
         align-items: center; /* Centra horizontalmente */
         justify-content: center; /* Centra verticalmente */
-        padding: 52px 0; /* Ajusta el padding del contenedor */
+        padding: 36px 0; /* Ajusta el padding del contenedor */
     }
 
     .developer-card {
-        width: 200%; /* Reduce el tamaño de la tarjeta al 90% del ancho */
-        max-width: 100px; /* Asegura que no sea más grande que un límite */
-        margin: 1px 0; /* Espaciado entre tarjetas */
+        width: 95%; /* Reduce el tamaño de la tarjeta al 90% del ancho */
+        max-width: 280px; /* Asegura que no sea más grande que un límite */
+        margin: 2px -20px;
+        min-height: 155px;
     }
 
     .developer-card h2 {
-        font-size: 16px; /* Reduce el tamaño del título */
+        font-size: 30px; /* Reduce el tamaño del título */
         margin-bottom: 10px; /* Ajusta el margen inferior */
     }
 
     .developer-card p {
-        font-size: 14px; /* Reduce el tamaño del texto */
-        margin-bottom: 8px; /* Ajusta el margen inferior */
+        font-size: 16px; /* Reduce el tamaño del texto */
+        margin-bottom: 8px;
     }
 
     .social-links a {
-        font-size: 14px; /* Reduce el tamaño de los iconos sociales */
+        font-size: 20px; /* Reduce el tamaño de los iconos sociales */
     }
 
     .footer .social-links {
@@ -343,7 +347,7 @@ body {
     }
 
     #developer .social-links a {
-        font-size: 12px;
+        font-size: 16px;
     }
 
     .developer-logo {
