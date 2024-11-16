@@ -283,13 +283,13 @@ body {
         flex-direction: column; /* Coloca las tarjetas en una columna */
         align-items: center; /* Centra horizontalmente */
         justify-content: center; /* Centra verticalmente */
-        padding: 36px 0; /* Ajusta el padding del contenedor */
+        padding: 30px 0; /* Ajusta el padding del contenedor */
     }
 
     .developer-card {
-        width: 95%; /* Reduce el tamaño de la tarjeta al 90% del ancho */
-        max-width: 280px; /* Asegura que no sea más grande que un límite */
-        margin: 2px -20px;
+        width: 100%; /* Reduce el tamaño de la tarjeta al 90% del ancho */
+        max-width: 300px; /* Asegura que no sea más grande que un límite */
+        margin: 1px -20px;
         min-height: 155px;
     }
 
